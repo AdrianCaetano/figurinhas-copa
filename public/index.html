@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zac Artex Company | Pagamento Pix</title>
+  <meta name="description" content="Checkout Pix seguro da Zac Artex Company com entrega automática por e-mail." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <nav class="nav">
+        <div class="brand-mark">ZA</div>
+        <div>
+          <strong>Zac Artex Company</strong>
+          <span>Digital Delivery</span>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Compra segura via Pix</div>
+          <h1>Receba seu acesso digital com rapidez e segurança.</h1>
+          <p>
+            Digite seu e-mail, gere o QR Code Pix e, assim que o pagamento for confirmado,
+            a Zac Artex Company envia automaticamente o link do Drive para sua caixa de entrada.
+          </p>
+
+          <div class="trust-row">
+            <div>
+              <strong>01</strong>
+              <span>Informe seu e-mail</span>
+            </div>
+            <div>
+              <strong>02</strong>
+              <span>Pague por Pix</span>
+            </div>
+            <div>
+              <strong>03</strong>
+              <span>Receba no e-mail</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="checkout-card" aria-label="Checkout Zac Artex Company">
+          <div class="card-topline"></div>
+
+          <div id="formStep" class="step active">
+            <span class="status-pill">Entrega automática</span>
+            <h2>Finalizar compra</h2>
+            <p class="muted">Use um e-mail válido. É para ele que o link do Drive será enviado.</p>
+
+            <form id="checkoutForm" class="checkout-form">
+              <label for="email">E-mail do cliente</label>
+              <input id="email" name="email" type="email" placeholder="cliente@email.com" autocomplete="email" required />
+              <button id="generateBtn" type="submit">Gerar QR Code Pix</button>
+            </form>
+
+            <div class="security-note">
+              <span>🔒</span>
+              <p>O pagamento é processado por provedor de pagamento. A Zac Artex Company libera o acesso após confirmação.</p>
+            </div>
+          </div>
+
+          <div id="pixStep" class="step">
+            <span id="paymentStatus" class="status-pill pending">Aguardando pagamento</span>
+            <h2>Escaneie o QR Code</h2>
+            <p class="muted">Abra o app do banco, escolha Pix por QR Code e confirme o pagamento.</p>
+
+            <div class="qr-box">
+              <img id="qrImage" alt="QR Code Pix" />
+            </div>
+
+            <div class="amount-box">
+              <span>Valor</span>
+              <strong id="amount">R$ 0,00</strong>
+            </div>
+
+            <label for="copyPaste">Pix copia e cola</label>
+            <textarea id="copyPaste" readonly></textarea>
+
+            <div class="actions-row">
+              <button id="copyBtn" type="button">Copiar código Pix</button>
+              <a id="ticketLink" href="#" target="_blank" rel="noopener">Abrir no Mercado Pago</a>
+            </div>
+
+            <div class="progress-card">
+              <div class="pulse"></div>
+              <p id="progressText">Estou verificando a confirmação do pagamento automaticamente.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
