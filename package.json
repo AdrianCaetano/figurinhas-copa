@@ -1,0 +1,27 @@
+{
+  "name": "zac-artex-pix-site",
+  "version": "1.0.0",
+  "description": "Site profissional da Zac Artex Company com Pix Mercado Pago e entrega automática por e-mail.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-rate-limit": "latest",
+    "helmet": "latest",
+    "mercadopago": "latest",
+    "morgan": "latest",
+    "nodemailer": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
